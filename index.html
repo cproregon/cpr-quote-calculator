@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -270,6 +271,39 @@
   .btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(227,24,55,0.35); }
   .btn-secondary { background: white; color: var(--gray-600); border: 1px solid var(--gray-300); box-shadow: var(--shadow); }
   .btn-secondary:hover { color: var(--gray-800); border-color: var(--gray-400); }
+
+  @media (max-width: 640px) {
+    .col-headers { display: none; }
+
+    .primary-row {
+      grid-template-columns: 1fr 1fr !important;
+      grid-template-rows: auto auto;
+    }
+    .primary-row input[type=text] { grid-column: 1 / -1; }
+    .primary-row #p_charged       { grid-column: 1 / -1; }
+
+    .additional-row {
+      grid-template-columns: 1fr 1fr !important;
+      grid-template-rows: auto auto;
+    }
+    .additional-row input[type=text]  { grid-column: 1 / -1; }
+    .additional-row .charged-display  { grid-column: 1 / 2; }
+    .additional-row .btn-remove       { grid-column: 2 / 3; justify-self: end; }
+
+    .topbar { padding: 10px 14px; }
+    .cpr-logo-img { height: 36px; }
+    .topbar-title { font-size: 12px; }
+    .topbar-badge { display: none; }
+
+    .total-amount { font-size: 36px; }
+    .total-card::before { font-size: 80px; }
+
+    .formula-grid { grid-template-columns: 1fr; }
+    .formula-item.full { grid-column: 1; }
+
+    .content { padding: 14px 12px 0; }
+    .card { padding: 16px; }
+  }
 
   @media print {
     body { background: white; }
